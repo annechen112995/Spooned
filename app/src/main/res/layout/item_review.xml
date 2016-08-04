@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/ivProfile"
+        android:src="@drawable/ratinghalf"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvUsername"
+        android:layout_alignTop="@+id/ivProfile"
+        android:layout_toEndOf="@+id/ivProfile"
+        android:textSize="12sp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvExcerpt"
+        android:layout_below="@+id/tvUsername"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/tvUsername"
+        android:layout_marginEnd="10dp"
+        android:layout_alignBottom="@+id/ivProfile"
+        android:maxLines="3"
+        android:ellipsize="end"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/tvTimestamp"
+        android:textSize="12sp"
+        android:layout_alignTop="@+id/tvUsername"
+        android:layout_alignEnd="@+id/tvExcerpt"/>
+
+
+    <!--
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/ivRatingIcon"
+            android:src="@drawable/ratingfull"
+            android:layout_marginRight="5dp"
+            android:layout_alignBottom="@+id/tvRating"
+            android:layout_toStartOf="@+id/tvTimestamp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.0"
+            android:id="@+id/tvRating"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="0dp"
+            android:layout_alignStart="@id/tvTimestamp"
+            android:layout_below="@id/tvTimestamp"/>-->
+
+</RelativeLayout>

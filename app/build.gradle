@@ -1,0 +1,76 @@
+apply plugin: 'com.android.application'
+
+android {
+    useLibrary 'org.apache.http.legacy'
+    compileSdkVersion 24
+    buildToolsVersion "24.0.0"
+
+    defaultConfig {
+        applicationId "fbu.spooned"
+        minSdkVersion 23
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    dexOptions {
+        incremental = true;
+        javaMaxHeapSize "4g"
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+
+    // Facebook SDK for FB login
+
+    // Async client
+
+    // reduce boilerplate
+
+    // swipeable cards library
+
+    // Parse backend libraries
+
+    // etc. oauth client provided by codepath
+    compile('com.codepath.libraries:android-oauth-handler:1.0.0@aar') {
+        transitive = true
+    }
+
+    // location services
+
+    // yelp api client
+
+    // glide for image loading
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+
+    compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.facebook.android:facebook-android-sdk:4.10.0'
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    compile 'com.jakewharton:butterknife:8.1.0'
+    compile 'com.daprlabs.aaron:cardstack:0.3.0'
+    compile 'com.parse.bolts:bolts-android:1.+'
+    compile 'com.parse:parsefacebookutils-v4-android:1.10.4@aar'
+    compile 'com.parse:parse-android:1.13.0'
+    compile 'com.google.android.gms:play-services-location:9.0.2'
+    compile 'com.google.android.gms:play-services:9.2.1'
+    compile 'com.google.maps.android:android-maps-utils:0.4.+'
+    compile 'com.yelp.clientlib:yelp-android:2.0.0'
+    compile 'com.github.bumptech.glide:glide:3.5.2'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.google.android.gms:play-services-ads:9.2.1'
+    compile 'com.google.android.gms:play-services-auth:9.2.1'
+    compile 'com.google.android.gms:play-services-gcm:9.2.1'
+    compile 'junit:junit:4.12'
+}

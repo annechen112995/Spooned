@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="5dp"
+    android:layout_width="wrap_content" android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Delete all favorites?"
+        android:id="@+id/tvDeleteTitle"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="5dp"
+        android:text="You won&apos;t be able to recover your deleted restaurants if you press &quot;okay.&quot; Delete all favorited restaurants?"
+        android:id="@+id/tvDeleteDesc"
+        android:layout_below="@+id/tvDeleteTitle"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:layout_below="@id/tvDeleteDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:weightSum="1">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="okay"
+        style="@style/CleanButton"
+        android:id="@+id/btnDeleteOkay"
+        android:layout_weight="0.55" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cancel"
+        style="@style/CleanButton"
+        android:id="@+id/btnDeleteCancel"
+        android:layout_weight="0.55" />
+    </LinearLayout>
+</RelativeLayout>

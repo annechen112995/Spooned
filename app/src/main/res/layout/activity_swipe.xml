@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.daprlabs.cardstack.SwipeRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:swipedeck="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.SwipeActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/llReset"
+        android:visibility="invisible"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:scaleType="fitXY"
+            android:id="@+id/ivOut"
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logobroken" />
+
+        <TextView
+            android:id="@+id/tvReset"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:text="search for more restaurants\nby adjusting search radius\nor setting filters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/downarrow"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:id="@+id/ibLocation"
+        android:elevation="1dp"
+        android:background="@drawable/button_shape"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:src="@drawable/ic_location" />
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/button_shape"
+        android:scaleType="fitXY"
+        android:id="@+id/ibFork"
+        android:elevation="1dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_eat_like"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:onClick="onSavedClick"/>
+
+    <ImageButton
+        android:id="@+id/ibLike"
+        android:src="@drawable/ic_heart"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:background="@drawable/button_shape"
+        android:elevation="1dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:id="@+id/ibDislike"
+        android:src="@drawable/ic_ex"
+        android:background="@drawable/button_shape"
+        android:elevation="1dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:id="@+id/ibFilter"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_filter"
+        android:background="@drawable/button_shape"
+        android:elevation="1dp" />
+
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/ic_spooned"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0"
+        android:elevation="2dp"
+        android:id="@+id/right_image"/>
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_knifed"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0"
+        android:elevation="2dp"
+        android:id="@+id/left_image"/>
+
+    <com.daprlabs.cardstack.SwipeDeck
+        android:id="@+id/swipe_deck"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingStart="10dp"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/ibLocation"
+        android:layout_above="@id/ibDislike"
+        android:clipChildren="false"
+        swipedeck:card_spacing="10dp"
+        swipedeck:max_visible="3"
+        swipedeck:render_above="false"
+        swipedeck:rotation_degrees="15" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"/>
+
+
+</com.daprlabs.cardstack.SwipeRelativeLayout>

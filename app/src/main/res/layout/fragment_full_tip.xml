@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/ivProfileFrag"
+        android:src="@drawable/ratinghalf"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="John Doe"
+        android:id="@+id/tvUsernameFrag"
+        android:layout_alignTop="@+id/ivProfileFrag"
+        android:layout_toEndOf="@+id/ivProfileFrag"
+        android:textSize="12sp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lorem_ipsum"
+        android:id="@+id/tvExcerptFrag"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:ellipsize="end"
+        android:layout_alignStart="@+id/tvUsernameFrag"
+        android:layout_below="@+id/tvUsernameFrag" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10 m"
+        android:id="@+id/tvTimestampFrag"
+        android:textSize="12sp"
+        android:layout_alignBaseline="@+id/tvUsernameFrag"
+        android:layout_alignBottom="@+id/tvUsernameFrag"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="5dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvExcerptFrag"
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="false"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignStart="@+id/tvExcerptFrag">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/ivTipLike"
+            android:src="@drawable/tip_like"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="0"
+            android:id="@+id/tvLikes"
+            android:layout_marginTop="5dp"
+            android:layout_margin="5dp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/ivTipDislike"
+            android:src="@drawable/tip_dislike"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="0"
+            android:id="@+id/tvDislike"
+            android:layout_marginTop="5dp"
+            android:layout_margin="5dp" />
+    </LinearLayout>
+
+</RelativeLayout>

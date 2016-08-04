@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+        android:id="@+id/main_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/flHeader">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:id="@+id/ivHeader"
+            android:alpha="0.2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Restaurant"
+            android:id="@+id/tvName"
+            android:textSize="22sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/pricingBar"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="14sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="2dp"
+            android:layout_below="@id/tvName"
+            android:id="@+id/tvType"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvType"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="14sp"
+            android:layout_marginStart="10dp"
+            android:id="@+id/tvOpen"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvType"
+            android:layout_toEndOf="@id/tvOpen"
+            android:layout_alignTop="@id/tvOpen"
+            android:id="@+id/tvPhoneNum"
+            android:layout_marginStart="10dp"
+            android:textSize="14sp"/>
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            style="@style/spoonBar"
+            android:isIndicator="true"
+            android:layout_below="@id/tvOpen"
+            android:id="@+id/ratingBar"
+            android:numStars="5" />
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pricingBar"
+            android:layout_margin="10dp"
+            android:rating="0"
+            android:isIndicator="true"
+            android:stepSize="0.1"
+            android:numStars="4"
+            style="@style/pricingBar"
+            android:layout_alignParentEnd="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvDistance"
+            android:layout_below="@+id/ratingBar"
+            android:layout_alignStart="@id/ratingBar" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="15sp"
+            android:id="@+id/tvAddress"
+            android:layout_below="@id/tvDistance"
+            android:layout_alignStart="@+id/ratingBar"
+            android:longClickable="false"
+            android:lines="2" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/ivLikedDetail"
+            android:alpha="1"
+            android:visibility="invisible"
+            android:src="@drawable/ic_spooned"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/pricingBar" />
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/ivDislikedDetail"
+            android:alpha="1"
+            android:visibility="invisible"
+            android:src="@drawable/ic_knifed"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/pricingBar" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="200dp"
+        android:id="@+id/flMap">
+
+        <fragment
+            android:id="@+id/map_fragment_container"
+            class="com.google.android.gms.maps.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </fragment>
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height= "40dp"
+            android:src="@drawable/ic_marker"
+            android:id="@+id/ibMarker"
+            android:padding="18dp"
+            android:layout_margin="10dp"
+            android:background="#ffffff"/>
+
+    </FrameLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/go_to_website"
+        android:id="@+id/btnWeb"
+        style="@style/CleanButton"
+        android:layout_marginBottom="5dp"
+        android:onClick="fetchWebsite"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            android:id="@+id/tvNoVenue"
+            android:text="no reviews or photos to show"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:padding="5dp"
+        android:id="@+id/flPhotos"/>
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/btnAllPhotos"
+        android:layout_gravity="end"
+        style="@style/CleanButton"
+        android:layout_marginEnd="5dp"
+        android:text="see all"
+        android:onClick="getAllPhotos" />
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:id="@+id/flReviews"/>
+
+    <Button
+        android:layout_width ="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnMoreReviews"
+        android:layout_gravity="end"
+        style="@style/CleanButton"
+        android:padding="10sp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="5dp"
+        android:text="more reviews"
+        android:onClick="getMoreReviews"/>
+
+
+    </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+        <android.support.design.widget.FloatingActionButton
+            app:layout_behavior="fbu.spooned.ScrollAwareFABBehavior"
+            android:id="@+id/fabRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_heartfab"
+            android:layout_gravity="bottom|end"
+            android:tint="@color/colorWhite"
+            />
+
+        <android.support.design.widget.FloatingActionButton
+            app:layout_behavior="fbu.spooned.ScrollAwareFABBehavior"
+            android:id="@+id/fabLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_exfab"
+            android:layout_gravity="bottom|start"
+            android:tint="@color/colorWhite"/>
+
+</android.support.design.widget.CoordinatorLayout>

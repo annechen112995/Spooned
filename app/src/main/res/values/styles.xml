@@ -1,0 +1,44 @@
+<resources xmlns:android="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorPrimaryDark</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/background_splash</item>
+    </style>
+
+
+    <style name="spoonBar" parent="android:style/Widget.RatingBar">
+
+        <item name="android:progressDrawable">@drawable/custom_bar</item>
+        <item name="android:minHeight">30dip</item>
+        <item name="android:maxHeight">30dip</item>
+
+    </style>
+
+    <style name="pricingBar" parent="android:style/Widget.RatingBar">
+
+        <item name="android:progressDrawable">@drawable/pricing_bar</item>
+        <item name="android:minHeight">16dp</item>
+        <item name="android:maxHeight">40dp</item>
+
+    </style>
+
+    <style name="CleanButton" parent="android:style/Widget.Button">
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorWhite</item>
+
+
+    </style>
+
+
+</resources>

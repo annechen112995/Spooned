@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/choose_location"
+    android:layout_width="450dp" android:layout_height="500dp"
+    android:layout_gravity="center" android:orientation="vertical"  >
+
+    <fbu.spooned.MyNumberPicker
+        android:id="@+id/npDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/tvRadiusLabel"
+        android:layout_centerHorizontal="true"
+        android:descendantFocusability="blocksDescendants"></fbu.spooned.MyNumberPicker>
+
+    <fragment
+        android:id="@+id/place_autocomplete_fragment"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/tvLocationLabel"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ibCurrentLocation"
+        android:background="@drawable/button_shape"
+        android:src="@drawable/ic_current_location"
+        android:layout_above="@+id/tvRadiusLabel"
+        android:layout_alignEnd="@+id/npDistance"
+        android:layout_alignTop="@+id/place_autocomplete_fragment" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_done"
+        android:background="@drawable/button_shape"
+        android:id="@+id/btnApply"
+        android:padding="5dp"
+        android:layout_gravity="right"
+        android:paddingLeft="35dp"
+        android:layout_alignBottom="@+id/npDistance"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show me restaurants at..."
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:id="@+id/tvLocationLabel"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="within..."
+        android:textColor="#000000"
+        android:id="@+id/tvRadiusLabel"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/place_autocomplete_fragment"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="mi"
+        android:id="@+id/tvMiles"
+        android:layout_alignBottom="@+id/npDistance"
+        android:layout_toEndOf="@+id/npDistance"
+        android:paddingLeft="145dp"
+        android:layout_marginBottom="81dp" />
+
+
+</RelativeLayout>
